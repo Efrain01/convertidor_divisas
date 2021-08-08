@@ -1,12 +1,4 @@
-menu = """
-                CONVERTIDOR DE DIVISAS
-
-Menu de opciones:
-1.- Conversiones Peso mexicano - Dolar
-2.- Conversiones Peso colombiano - Dolar
-3.- Conversiones Peso argentino - Dolar
-"""
-
+#----------FUNCIONES----------#
 def menu_divisa(divisa, peso):
     print("CONVERTIDOR DE DIVISA " + divisa + "\n")
     print("Menu de opciones:")
@@ -33,22 +25,41 @@ def cambio_divisas(peso):
         print("Tienes $ " + pesos + " Pesos " + peso + ".")
     else: 
         print("Opcion ingresada no valida, por favor verifique si respuesta, gracias ...")
+#----------FIN FUNCIONES----------#
 
 
-print(menu, end = "")
-opcion = int(input("Opcion: "))
+def main():
+    #----------MENU----------#
+    menu = """
+                    CONVERTIDOR DE DIVISAS
 
-if opcion == 1: 
-    menu_divisa("MEXICANA", "mexicanos")
-    cambio_divisas("mexicanos")
+    Menu de opciones:
+    1.- Conversiones Peso mexicano - Dolar
+    2.- Conversiones Peso colombiano - Dolar
+    3.- Conversiones Peso argentino - Dolar
+    """
+    #----------FIN MENU----------#
+
+    #----------MAIN----------#
+    print(menu, end = "")
+    opcion = int(input("Opcion: "))
+
+    if opcion == 1: 
+        menu_divisa("MEXICANA", "mexicanos")
+        cambio_divisas("mexicanos")
+        
+    elif opcion == 2: 
+        menu_divisa("COLOMBIANA", "colombianos")
+        cambio_divisas("colombianos")
+
+    elif opcion == 3: 
+        menu_divisa("ARGENTINA", "argentinos")
+        cambio_divisas("argentinos")
+
+    else:
+        print("Opcion ingresada no valida, por favor verifique si respuesta, gracias ...")    
+    #----------FIN MAIN----------#
+
+if __name__ == '__main__':
+    main()
     
-elif opcion == 2: 
-    menu_divisa("COLOMBIANA", "colombianos")
-    cambio_divisas("colombianos")
-
-elif opcion == 3: 
-    menu_divisa("ARGENTINA", "argentinos")
-    cambio_divisas("argentinos")
-
-else:
-    print("Opcion ingresada no valida, por favor verifique si respuesta, gracias ...")    
