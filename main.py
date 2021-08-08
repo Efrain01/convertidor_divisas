@@ -7,35 +7,17 @@ Menu de opciones:
 3.- Conversiones Peso argentino - Dolar
 """
 
-menu_divisa_mexicana = """
-            CONVERTIDOR DE DIVISA MEXICANA
-
-Menu de opciones:
-1.- Convertir de pesos mexicanos a dolares americanos
-2.- Convertir de dolares americanos a pesos mexicanos
-"""
-
-menu_divisa_colombiana = """
-            CONVERTIDOR DE DIVISA COLOMBIANA
-
-Menu de opciones:
-1.- Convertir de pesos colombianos a dolares americanos
-2.- Convertir de dolares americanos a pesos colombianos
-"""
-
-menu_divisa_argentina = """
-            CONVERTIDOR DE DIVISA ARGENTINA
-
-Menu de opciones:
-1.- Convertir de pesos argentinos a dolares americanos
-2.- Convertir de dolares americanos a pesos argentinos
-"""
+def menu_divisa(divisa, peso):
+    print("CONVERTIDOR DE DIVISA " + divisa + "\n")
+    print("Menu de opciones:")
+    print("1.- Convertir de pesos " + peso + " a dolares americanos")
+    print("2.- Convertir de dolares americanos a pesos " + peso)
 
 print(menu, end = "")
 opcion = int(input("Opcion: "))
 
 if opcion == 1: 
-    print(menu_divisa_mexicana, end = "")
+    menu_divisa("MEXICANA", "mexicanos")
     opcion = int(input("Opcion: "))
     if opcion == 1: 
         pesos = input("Cuantos pesos mexicanos tienes: ")
@@ -56,7 +38,7 @@ if opcion == 1:
     else: 
         print("Opcion ingresada no valida, por favor verifique si respuesta, gracias ...")
 elif opcion == 2: 
-    print(menu_divisa_colombiana, end = "")
+    menu_divisa("COLOMBIANA", "colombianos")
     opcion = int(input("Opcion: "))
     if opcion == 1: 
         pesos = input("Cuantos pesos colombianos tienes: ")
@@ -77,7 +59,7 @@ elif opcion == 2:
     else: 
         print("Opcion ingresada no valida, por favor verifique si respuesta, gracias ...")
 elif opcion == 3: 
-    print(menu_divisa_argentina, end = "")
+    menu_divisa("ARGENTINA", "argentinos")
     opcion = int(input("Opcion: "))
     if opcion == 1: 
         pesos = input("Cuantos pesos argentinos tienes: ")
